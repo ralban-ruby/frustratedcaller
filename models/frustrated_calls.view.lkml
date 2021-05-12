@@ -4,6 +4,7 @@ view: frustrated_calls {
 
   dimension: call_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}."CALL_ID" ;;
   }
 

@@ -1,12 +1,12 @@
 view: link {
   sql_table_name: "ACTIVITIES"."LINK"
     ;;
-  drill_fields: [id]
 
-  dimension: id {
+
+  dimension: PRL_COMPANY_ID_C {
     primary_key: yes
     type: string
-    sql: ${TABLE}."ID" ;;
+    sql: ${TABLE}."PRL_COMPANY_ID_C" ;;
   }
 
   dimension: industry {
@@ -16,6 +16,6 @@ view: link {
 
   measure: count {
     type: count
-    drill_fields: [id]
+
   }
 }

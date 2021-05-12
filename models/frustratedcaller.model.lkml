@@ -11,7 +11,7 @@ explore: daily_rollup {
     join: link {
       relationship: one_to_one
       type: left_outer
-      sql_on: ${daily_rollup.company_id} = ${link.id}  ;;
+      sql_on: ${daily_rollup.company_id} = ${link.PRL_COMPANY_ID_C}  ;;
   }
 }
 datagroup: frustratedcaller_default_datagroup {
