@@ -2,9 +2,18 @@ connection: "elt_connector"
 
 include: "*.view"
 
-explore:  frustrated_calls{}
-explore: daily_rollup {}
-
+explore: daily_rollup {
+    join: frustrated_calls {
+      relationship: many_to_many
+      type: left_outer
+      sql_on: ${daily_rollup.company_id} = ${frustrated_calls.company_id}  ;;
+  }
+    join: link {
+      relationship: one_to_one
+      type: left_outer
+      sql_on: ${daily_rollup.company_id} = ${link.id}  ;;
+  }
+}
 datagroup: frustratedcaller_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
