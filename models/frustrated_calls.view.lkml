@@ -106,4 +106,16 @@ view: frustrated_calls {
     type: count
     drill_fields: [from_name, company_name]
   }
+
+  measure: sum_f_calls {
+    type: count_distinct
+    sql: ${call_id} ;;
+  }
+
+  measure: fcallratio {
+    type: number
+    sql: ${sum_f_calls}/ ${daily_rollup.sum_total_calls} ;;
+    value_format: "0%"
+  }
+
 }

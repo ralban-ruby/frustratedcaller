@@ -63,4 +63,8 @@ view: daily_rollup {
     type: count
     drill_fields: [id, company_name]
   }
+  measure: sum_total_calls {
+    type: sum
+    sql: ${calls} ;;
+  }
 }
