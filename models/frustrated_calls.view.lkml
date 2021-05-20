@@ -117,11 +117,6 @@ view: frustrated_calls {
     sql: ${sum_f_calls}/ ${daily_rollup.sum_total_calls} ;;
     value_format: "0%"
   }
-
-  parameter: Datefilter {
-    type: date
-  }
-
   filter: rollup_and_call_dates {
     sql:
     {% condition daily_rollup.activity_date %} ${daily_rollup.activity_date} {% endcondition %}
