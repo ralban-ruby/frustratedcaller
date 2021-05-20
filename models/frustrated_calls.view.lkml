@@ -118,4 +118,8 @@ view: frustrated_calls {
     value_format: "0%"
   }
 
+  parameter: Datefilter {
+    type: date
+  }
+
 }
