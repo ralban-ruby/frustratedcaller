@@ -122,4 +122,11 @@ view: frustrated_calls {
     type: date
   }
 
+  filter: rollup_and_call_dates {
+    sql:
+    {% condition daily_rollup.activity_date %} ${daily_rollup.activity_date} {% endcondition %}
+    AND
+    {% condition frustrated_calls.date_pst_date %} ${frustrated_calls.date_pst_date} {% endcondition %}
+    ;;
+  }
 }
