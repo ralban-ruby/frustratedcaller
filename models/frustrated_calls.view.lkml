@@ -117,11 +117,13 @@ view: frustrated_calls {
     sql: ${sum_f_calls}/ ${daily_rollup.sum_total_calls} ;;
     value_format: "0%"
   }
+
   filter: rollup_and_call_dates {
+    type: date
     sql:
-    {% condition daily_rollup.activity_date %} ${daily_rollup.activity_date} {% endcondition %}
-    AND
-    {% condition frustrated_calls.date_pst_date %} ${frustrated_calls.date_pst_date} {% endcondition %}
+{% condition rollup_and_call_dates %} ${daily_rollup.activity_date} {% endcondition %}
+AND
+{% condition rollup_and_call_dates %} ${frustrated_calls.date_pst_date} {% endcondition %}
     ;;
   }
 }
