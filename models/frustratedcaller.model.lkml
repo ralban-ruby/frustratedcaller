@@ -3,6 +3,7 @@ connection: "elt_connector"
 include: "*.view"
 
 explore: daily_rollup {
+  hidden: yes
     join: frustrated_calls {
       relationship: many_to_many
       type: left_outer
