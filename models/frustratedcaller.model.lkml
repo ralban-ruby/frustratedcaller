@@ -7,7 +7,8 @@ explore: daily_rollup {
     join: frustrated_calls {
       relationship: many_to_many
       type: left_outer
-      sql_on: ${daily_rollup.company_id} = ${frustrated_calls.company_id}  ;;
+      sql_on: ${daily_rollup.company_id} = ${frustrated_calls.company_id}
+      AND ${daily_rollup.activity_date} = ${frustrated_calls.date_pst_date} ;;
   }
     join: link {
       relationship: one_to_one
